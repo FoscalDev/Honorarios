@@ -1,0 +1,429 @@
+﻿@model CargueHonorarios.Models.ISH
+@using System.Web.UI.WebControls;
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ISH</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+
+<div class = "table-responsive">
+<table id="tabla" class= "table">
+    <thead>
+
+        <tr class="text-white" style="background-color: #3a6a98">
+
+            <th>Mes</th>
+            <th>Año</th>
+            <th>Acreedor</th>
+            <th>Nombre Acreedor</th>
+            <th>Documento comercial </th>
+            <th>Nombre paciente </th>
+            <th>No Documento </th>
+            <th>Nombre aseguradora </th>
+            <th>Valor neto </th>
+            <th>Porcentaje de Honorario Medico </th>
+            <th>Imp Final Hon Med </th>
+            <th>Fe inic R </th>
+            <th>Desc Prestacion Fact </th>
+            <th>Episodio </th>
+            <th>Variación Precio </th>
+            <th>Aseguradora </th>
+            <th>Cantidad facturada </th>
+            <th>Catal facturacion </th>
+            <th>Catalogo prestac </th>
+            <th>Centro de coste </th>
+            <th>Centro sanitario </th>
+            <th>Clase de facturacion </th>
+            <th>Cortesia </th>
+            <th>Ctd prestaciones </th>
+            <th>Denom funcion </th>
+            <th>Desc Interlocutor </th>
+            <th>Desc Prestacion </th>
+            <th>Documento modelo </th>
+            <th>Ejercicio </th>
+            <th>Estado </th>
+            <th>Estado NA30N </th>
+            <th>Fe contabilizacion </th>
+            <th>Funcion </th>
+            <th>Hora_de </th>
+            <th>Importe de Honorario Medico </th>
+            <th>Importe de Honorarios Medicos </th>
+            <th>Ind </th>
+            <th>Interlocutor </th>
+            <th>Moneda del documento </th>
+            <th>NIT acreedor </th>
+            <th>N actual prestacion </th>
+            <th>N documento </th>
+            <th>Numero de Contr </th>
+            <th>Numero de version del contrato </th>
+            <th>Observacion Cortesia </th>
+            <th>Orden destinatario </th>
+            <th>Paciente </th>
+            <th>Porcentaje Acreedor </th>
+            <th>Porcentaje Base </th>
+            <th>Porcentaje Retencion de honorario medico </th>
+            <th>Posicion </th>
+            <th>Posicion modelo </th>
+            <th>Prestacion </th>
+            <th>Prestacion1</th>
+            <th>QX Sin Costo </th>
+            <th>Sociedad </th>
+            <th>Status Transferencia FI </th>
+            <th>Tipo de prestacion </th>
+            <th>Un organiz gestora </th>
+            <th>Unidad medida_base </th>
+            <th>UO de enferm solic </th>
+            <th>UO medica solicit </th>
+            <th>Wissenschaftl Code </th>
+           </tr>
+    </thead>
+    <tbody> 
+
+        <tr>
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Mes)
+            @Html.ValidationMessageFor(model => model.Mes)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Anio)
+            @Html.ValidationMessageFor(model => model.Anio)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Acreedor)
+            @Html.ValidationMessageFor(model => model.Acreedor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Nombre_Acreedor)
+            @Html.ValidationMessageFor(model => model.Nombre_Acreedor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Documento_comercial)
+            @Html.ValidationMessageFor(model => model.Documento_comercial)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Nombre_paciente)
+            @Html.ValidationMessageFor(model => model.Nombre_paciente)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.No_Documento)
+            @Html.ValidationMessageFor(model => model.No_Documento)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Nombre_aseguradora)
+            @Html.ValidationMessageFor(model => model.Nombre_aseguradora)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Valor_neto)
+            @Html.ValidationMessageFor(model => model.Valor_neto)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Porcentaje_de_Honorario_Medico)
+            @Html.ValidationMessageFor(model => model.Porcentaje_de_Honorario_Medico)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Imp_Final_Hon_Med)
+            @Html.ValidationMessageFor(model => model.Imp_Final_Hon_Med)
+        </td>
+
+        <td class="editor-field type = date">
+            @Html.EditorFor(model => model.Fe_inic_R)
+            @Html.ValidationMessageFor(model => model.Fe_inic_R)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Desc_Prestacion_Fact)
+            @Html.ValidationMessageFor(model => model.Desc_Prestacion_Fact)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Variación_Precio)
+            @Html.ValidationMessageFor(model => model.Variación_Precio)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Aseguradora)
+            @Html.ValidationMessageFor(model => model.Aseguradora)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Cantidad_facturada)
+            @Html.ValidationMessageFor(model => model.Cantidad_facturada)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Catal_facturacion)
+            @Html.ValidationMessageFor(model => model.Catal_facturacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Catalogo_prestac)
+            @Html.ValidationMessageFor(model => model.Catalogo_prestac)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Centro_de_coste)
+            @Html.ValidationMessageFor(model => model.Centro_de_coste)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Centro_sanitario)
+            @Html.ValidationMessageFor(model => model.Centro_sanitario)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Clase_de_facturacion)
+            @Html.ValidationMessageFor(model => model.Clase_de_facturacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Cortesia)
+            @Html.ValidationMessageFor(model => model.Cortesia)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Ctd_prestaciones)
+            @Html.ValidationMessageFor(model => model.Ctd_prestaciones)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Denom_funcion)
+            @Html.ValidationMessageFor(model => model.Denom_funcion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Desc_Interlocutor)
+            @Html.ValidationMessageFor(model => model.Desc_Interlocutor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Desc_Prestacion)
+            @Html.ValidationMessageFor(model => model.Desc_Prestacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Documento_modelo)
+            @Html.ValidationMessageFor(model => model.Documento_modelo)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Ejercicio)
+            @Html.ValidationMessageFor(model => model.Ejercicio)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Episodio)
+            @Html.ValidationMessageFor(model => model.Episodio)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Estado)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Estado_NA30N)
+            @Html.ValidationMessageFor(model => model.Estado_NA30N)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Fe_contabilizacion)
+            @Html.ValidationMessageFor(model => model.Fe_contabilizacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Funcion)
+            @Html.ValidationMessageFor(model => model.Funcion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Hora_de)
+            @Html.ValidationMessageFor(model => model.Hora_de)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Importe_de_Honorario_Medico)
+            @Html.ValidationMessageFor(model => model.Importe_de_Honorario_Medico)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Importe_de_Honorarios_Medicos)
+            @Html.ValidationMessageFor(model => model.Importe_de_Honorarios_Medicos)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Ind)
+            @Html.ValidationMessageFor(model => model.Ind)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Interlocutor)
+            @Html.ValidationMessageFor(model => model.Interlocutor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Moneda_del_documento)
+            @Html.ValidationMessageFor(model => model.Moneda_del_documento)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.NIT_acreedor)
+            @Html.ValidationMessageFor(model => model.NIT_acreedor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.N_actual_prestacion)
+            @Html.ValidationMessageFor(model => model.N_actual_prestacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.N_documento)
+            @Html.ValidationMessageFor(model => model.N_documento)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Numero_de_Contr)
+            @Html.ValidationMessageFor(model => model.Numero_de_Contr)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Numero_de_version_del_contrato)
+            @Html.ValidationMessageFor(model => model.Numero_de_version_del_contrato)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Observacion_Cortesia)
+            @Html.ValidationMessageFor(model => model.Observacion_Cortesia)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Orden_destinatario)
+            @Html.ValidationMessageFor(model => model.Orden_destinatario)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Paciente)
+            @Html.ValidationMessageFor(model => model.Paciente)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Porcentaje_Acreedor)
+            @Html.ValidationMessageFor(model => model.Porcentaje_Acreedor)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Porcentaje_Base)
+            @Html.ValidationMessageFor(model => model.Porcentaje_Base)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Porcentaje_Retencion_de_honorario_medico)
+            @Html.ValidationMessageFor(model => model.Porcentaje_Retencion_de_honorario_medico)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Posicion)
+            @Html.ValidationMessageFor(model => model.Posicion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Posicion_modelo)
+            @Html.ValidationMessageFor(model => model.Posicion_modelo)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Prestacion)
+            @Html.ValidationMessageFor(model => model.Prestacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.QX_Sin_Costo)
+            @Html.ValidationMessageFor(model => model.QX_Sin_Costo)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Sociedad)
+            @Html.ValidationMessageFor(model => model.Sociedad)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Status_Transferencia_FI)
+            @Html.ValidationMessageFor(model => model.Status_Transferencia_FI)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Tipo_de_prestacion)
+            @Html.ValidationMessageFor(model => model.Tipo_de_prestacion)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Un_organiz_gestora)
+            @Html.ValidationMessageFor(model => model.Un_organiz_gestora)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Unidad_medida_base)
+            @Html.ValidationMessageFor(model => model.Unidad_medida_base)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.UO_de_enferm_solic)
+            @Html.ValidationMessageFor(model => model.UO_de_enferm_solic)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.UO_medica_solicit)
+            @Html.ValidationMessageFor(model => model.UO_medica_solicit)
+        </td>
+
+        <td class="editor-field">
+            @Html.EditorFor(model => model.Wissenschaftl_Code)
+            @Html.ValidationMessageFor(model => model.Wissenschaftl_Code)
+        </td>
+         </tr>
+    </tbody>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.UsuarioId, "Usuario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UsuarioId")
+            @Html.ValidationMessageFor(model => model.UsuarioId)
+        </div>*@
+
+       
+     </table>
+</div>
+    <p> <button type="submit" class="btn btn-success" style="color: white">Guardar archivo</button></p>
+ </fieldset>
+  
+}
+
+<div class="col-6">
+    
+    @Html.ActionLink("Atras", "IndexISH", null, new { @class = "btn btn-success", style = "color:white" })
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

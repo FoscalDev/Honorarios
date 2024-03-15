@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CargueHonorarios.Models.Usuarios>
+@using System.Web.UI.WebControls;
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+<div class="container">
+    <br />
+
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Crear Usuario", "Nuevo", null, new { @class="btn btn-success" })
+
+</p>
+
+    <div class = "table-responsive">
+<table id="tabla" class= "table table-hover table-sm">
+    <thead>
+          <tr  class="text-white" style="background-color: #3a6a98">
+              <th>Id Usuario</th>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Empresa</th>
+              <th>Tipo Usuario</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              </tr>
+
+      </thead>
+     <tbody>
+        @foreach (var item in Model){
+            
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Codigo)</td>
+             <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+             <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+             <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+             <td>@Html.DisplayFor(modelItem => item.Sociedad.Descripcion)</td>
+             <td>@Html.DisplayFor(modelItem => item.Tipo_Usuario.Descripcion)</td>
+
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id}) 
+        </td>
+      @*  <td>
+            @Html.ActionLink("Detalle", "Details", new { id=item.Id}) 
+         </td>*@
+        </tr>
+
+
+  }
+
+     </tbody>
+
+</table>
+</div>
+</div>

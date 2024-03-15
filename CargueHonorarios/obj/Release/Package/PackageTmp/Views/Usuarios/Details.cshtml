@@ -1,0 +1,64 @@
+﻿@model CargueHonorarios.Models.Usuarios
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container">
+<br />
+<h3 style="text-align:center">Detalles Usuarios</h3>
+<br />
+<div class = "table-responsive">
+<table class= "table">
+   <thead>
+          <tr  class="text-white" style="background-color: #3a6a98">
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Empresa</th>
+              <th>Tipo Usuario</th>
+              <th></th>
+           </tr>
+    </thead>
+<tbody>
+    <tr>
+       <td class="display-field">
+            @Html.DisplayFor(model => model.Codigo)
+        </td>
+
+        <td class="display-field">
+            @Html.DisplayFor(model => model.Nombre)
+        </td>
+
+        <td class="display-field">
+            @Html.DisplayFor(model => model.Correo)
+        </td>
+
+        <td class="display-field">
+            @Html.DisplayFor(model => model.Telefono)
+        </td>
+
+        <td class ="display-field">
+            @Html.DisplayFor(model => model.Sociedad.Descripcion)
+        </td>
+
+        <td class="display-field">
+            @Html.DisplayFor(model => model.Tipo_Usuario.Descripcion)
+        </td>
+    </tr>
+
+ </tbody>
+</table>
+</div>
+<p>
+    @*@Html.ActionLink("Editar", "Edit", new {id=Model.Id })*@
+    @Html.ActionLink("Atras", "Index", null, new { @class="btn btn-success", style="color:white" })
+</p>
+</div>
+
+ 
+
+

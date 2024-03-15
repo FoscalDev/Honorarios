@@ -1,0 +1,313 @@
+﻿@model IEnumerable<CargueHonorarios.Models.SD>
+@using System.Web.UI.WebControls;
+
+@{
+    ViewBag.Title = "CargueHonorariosSD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string message = string.Format("{0}", Session["message"]);
+    string message1 = string.Format("{0}", Session["message1"]);
+    string message2 = string.Format("{0}", Session["message2"]);
+}
+
+
+@*@{var ListItems = new List<ListItem> { 
+        new ListItem { Text = "Enero", Value = "Enero" }, 
+        new ListItem { Text = "Febrero", Value = "Febrero" },
+        new ListItem { Text = "Marzo", Value = "Marzo" },
+        new ListItem { Text = "Abril", Value = "Abril" },
+        new ListItem { Text = "Mayo", Value = "Mayo" },
+        new ListItem { Text = "Junio", Value = "Junio" },
+        new ListItem { Text = "Julio", Value = "Julio" },
+        new ListItem { Text = "Agosto", Value = "Agosto" },
+        new ListItem { Text = "Septiembre", Value = "Septiembre" },
+        new ListItem { Text = "Octubre", Value = "Octubre" },
+        new ListItem { Text = "Noviembre", Value = "Noviembre" },
+        new ListItem { Text = "Diciembre", Value = "Diciembre" } 
+        };
+}*@
+
+    @if (message == "OK")
+{
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Exitoso</h4>
+            <hr>
+            <p class="mb-0">@message2</p>
+            <br />
+            @Html.ActionLink("Atras", "Index", "Login", null, new { @class = "btn btn-success", style = "color:white" })
+            @*<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>*@
+        </div>
+
+
+}else{
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Error</h4>
+            <hr>
+            <p class="mb-0">@message1</p>
+             @Html.ActionLink("Atras", "Index", "Login", null, new { @class = "btn btn-success", style = "color:white" })
+        </div>
+
+}
+@*Session.Remove("message");*@
+
+
+
+@*@if(!string.IsNullOrWhiteSpace(message)) { 
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+            
+            <hr>
+            <p class="mb-0">@message</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>  
+Session.Remove("message");
+ }
+
+@if(!string.IsNullOrWhiteSpace(message1)) { 
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+            
+            <hr>
+            <p class="mb-0">@message1</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>  
+Session.Remove("message1");
+ }
+ *@
+ 
+ 
+
+
+
+@*<div class="container">
+
+<br />
+<br />
+<h3 style="text-align:center">Honorarios</h3>
+<br />
+<br />
+
+<div class = "table-responsive">
+<table class= "table" id ="tabla">
+    <thead>
+          <tr class="text-white" style="background-color: #3a6a98">
+            <th>Año</th>
+            <th>Mes</th>
+            <th>Acreedor</th>
+            <th>Nombre</th>
+            <th>Factura</th>
+            <th>Pagador</th>
+            <th>Solicitante</th>
+            <th>Precio Credito</th>
+            <th>CAI</th>
+            <th>Pago</th>
+            <th>Fecha Factura</th>
+            <th>Numero de material</th>
+            <th>CeBe</th>
+            <th>Ce_coste</th>
+            <th>Ctd_facturada</th>
+            <th>Mon</th>
+            <th>Nombre2</th>
+            <th>Nombre3</th>
+            <th>Cliente</th>
+            <th>Pagador1</th>
+            <th>Pos</th>
+            <th>Prc Neto</th>
+            <th>Soc</th>
+            <th>Clase de Factura</th>
+            <th>Número de cuenta del proveedor</th>
+            <th>CeBe1</th>
+            <th>CIFac</th>
+            <th>Doc venta</th>
+            <th>An</th>
+            <th>Fecha doc</th>
+            <th>Fuc</th>
+            <th>Mon1</th>
+            <th>Tipo de factura</th>
+            <th>TpFactura</th>
+            <th>UMB</th>
+            <th>UM</th>
+            <th>Valor neto</th>
+            <th>Solic</th>
+            <th>Valor Neto1</th>
+            <th>Material</th>
+           </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model){
+            
+        <tr>
+         @*<td>
+            @Html.DisplayFor(modelItem => item.anio)
+         </td>
+             <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre1)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Factura)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Pagador)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Solicitante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio_credito)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.CAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAGO)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.Fecha_factura).ToString("dd/MM/yyyy")
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Numero_de_material)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.CeBe)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Ce_coste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ctd_facturada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre3)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Cliente)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Pagador1)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Pos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prc_neto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soc)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Clase_de_factura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Texto_Número_de_cuenta_del_proveedor_o_a)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CeBe1)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.CIFac)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Doc_venta)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.An)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.Fecha_doc).ToString("dd/MM/yyyy")
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Func)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Mon1)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Tipo_de_factura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TpFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UMB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_neto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Solic)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Valorneto1)
+        </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Material)
+        </td>*@
+
+      
+@*       </tr>
+            
+            
+        }
+    </tbody>
+
+</table>
+
+    </div>
+
+</div>*@
+
+
+
+@*<script>
+    $(document).ready(function () {
+        $('#tabla').DataTable({
+            "bFilter": false,
+
+            language: {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+
+
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero-",
+                    "sLast": "Último",
+                    "sNext": "  - Siguiente",
+                    "sPrevious": "Anterior -  "
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            },
+
+
+        });
+        
+    })
+
+ </script>*@

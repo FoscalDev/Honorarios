@@ -1,0 +1,67 @@
+﻿@model CargueHonorarios.Models.Usuarios
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<fieldset>
+    <legend>Usuarios</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clave)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clave)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmpresaId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmpresaId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoUsuarioId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoUsuarioId)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="<Eliminar" /> |
+        @Html.ActionLink("Atras", "Index")
+    </p>
+}

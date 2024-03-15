@@ -1,0 +1,117 @@
+﻿@model CargueHonorarios.Models.Usuarios
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="text-align:center">Editar Usuarios</h3>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+ <fieldset>
+      
+        @Html.HiddenFor(model => model.Id)
+
+<div class="row justify-content-start">
+    <div class="col-2" style="text-align:center">
+    <br />
+    </div>
+<div class="col-9">
+<div class="card ">
+<div class="card-header text-white" style="background-color:#3a6a98">Datos Basicos del usuario</div>
+<div class="card-body">
+   <div class="row justify-content-start">
+     
+       <div class="col-4">
+        <div class="editor-label" style="font-weight:bold">
+            Codigo
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Codigo", null, htmlAttributes: new { @class = "form-control", autocomplete = "off", placeholder = "Codigo" })
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+        </div>
+        <div class="col-4">
+        <div class="editor-label" style="font-weight:bold">
+            Nombre
+        </div>
+        <div class="editor-field">
+             @Html.TextBox("Nombre", null, htmlAttributes: new { @class = "form-control", autocomplete = "off", placeholder = "Nombre" })
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+        </div>
+
+       <div class="col-4">
+        <div class="editor-label" style="font-weight:bold">
+            Correo
+        </div>
+        <div class="editor-field">
+             @Html.TextBox("Correo", null, htmlAttributes: new { @class = "form-control", autocomplete = "off", placeholder = "Correo" })
+            @Html.ValidationMessageFor(model => model.Correo)
+        </div>
+        </div>
+
+        
+       <div class="col-4" style="font-weight:bold">
+        <div class="editor-label" style="font-weight:bold">
+            Contraseña
+        </div>
+        <div class="editor-field">
+             @Html.TextBox("Clave", null, htmlAttributes: new { @class = "form-control", autocomplete = "off", placeholder = "Clave" })
+            @Html.ValidationMessageFor(model => model.Clave)
+        </div>
+        </div>
+
+         <div class="col-4" style="font-weight:bold">
+        <div class="editor-label" style="font-weight:bold">
+            Telefono
+        </div>
+        <div class="editor-field">
+             @Html.TextBox("Telefono", null, htmlAttributes: new { @class = "form-control", autocomplete = "off", placeholder = "Telefono" })
+            @Html.ValidationMessageFor(model => model.Telefono)
+        </div>
+        </div>
+
+         <div class="col-4">
+        <div class="editor-label" style="font-weight:bold">
+            Empresa
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor( model => model.EmpresaId, new SelectList(Model.ListadoSociedad, "Id", "Descripcion" ),"---Seleccione---", htmlAttributes: new { @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.EmpresaId)
+        </div>
+        </div>
+
+         <div class="col-4">
+        <div class="editor-label" style="font-weight:bold">
+            Tipo Usuario
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor( model => model.TipoUsuarioId, new SelectList(Model.ListadoTipoUsuario, "Id", "Descripcion" ),"---Seleccione---", htmlAttributes: new { @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.TipoUsuarioId)
+        </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+     <br />
+     <br />
+   <div class="row justify-content-center">
+    <div class="col-4 " style="text-align:end">
+    <input type="submit" value="Guardar" class="btn btn-success" style="color:white" />
+    </div>
+    <div class="col-4">
+    @Html.ActionLink("Atras", "Index", null, new { @class="btn btn-success", style="color:white" }) 
+    </div>
+</div>
+
+</fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

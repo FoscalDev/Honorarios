@@ -1,0 +1,387 @@
+﻿@model IEnumerable<CargueHonorarios.Models.ISH>
+@using System.Web.UI.WebControls;
+
+@{
+    ViewBag.Title = "IndexISH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string message = string.Format("{0}", Session["message"]);
+    string message1 = string.Format("{0}", Session["message1"]);
+    string message2 = string.Format("{0}", Session["message2"]);
+}
+
+
+
+@*@{var ListItems = new List<ListItem> { 
+        new ListItem { Text = "Enero", Value = "Enero" }, 
+        new ListItem { Text = "Febrero", Value = "Febrero" },
+        new ListItem { Text = "Marzo", Value = "Marzo" },
+        new ListItem { Text = "Abril", Value = "Abril" },
+        new ListItem { Text = "Mayo", Value = "Mayo" },
+        new ListItem { Text = "Junio", Value = "Junio" },
+        new ListItem { Text = "Julio", Value = "Julio" },
+        new ListItem { Text = "Agosto", Value = "Agosto" },
+        new ListItem { Text = "Septiembre", Value = "Septiembre" },
+        new ListItem { Text = "Octubre", Value = "Octubre" },
+        new ListItem { Text = "Noviembre", Value = "Noviembre" },
+        new ListItem { Text = "Diciembre", Value = "Diciembre" } 
+        };
+}*@
+<div class="container">
+
+    @if (message == "OK")
+{
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Exitoso</h4>
+            <hr>
+            <p class="mb-0">@message2</p>
+            <br />
+            @Html.ActionLink("Atras", "Index", "Login", null, new { @class = "btn btn-success", style = "color:white" })
+            @*<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>*@
+        </div>
+
+
+}else{
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Error</h4>
+            <hr>
+            <p class="mb-0">@message1</p>
+            @Html.ActionLink("Atras", "Index", "Login", null, new { @class = "btn btn-success", style = "color:white" })
+        </div>
+
+}
+@*Session.Remove("message");*@
+
+</div>
+@*<div class="container">
+
+<br />
+<br />
+<h3 style="text-align:center">Honorarios ISH</h3>
+<br />
+<br />*@
+
+
+
+@*<p>
+    @Html.ActionLink("Crear Nuevo Honorarios", "Create")
+</p>*@
+
+
+@*<div class = "table-responsive">
+<table id="tabla" class= "table">
+    <thead>
+
+          <tr class="text-white" style="background-color: #3a6a98">
+            <th>Año</th>
+            <th>Mes</th>
+            <th>Acreedor</th>
+            <th>Nombre Acreedor</th>
+            <th>Documento comercial </th>
+            <th>Nombre paciente </th>
+            <th>No Documento </th>
+            <th>Nombre aseguradora </th>
+            <th>Valor neto </th>
+            <th>Porcentaje de Honorario Medico </th>
+            <th>Imp Final Hon Med </th>
+            <th>Fe inic R </th>
+            <th>Desc Prestacion Fact </th>
+            <th>Episodio </th>
+            <th>Variación Precio </th>
+            <th>Aseguradora </th>
+            <th>Cantidad facturada </th>
+            <th>Catal facturacion </th>
+            <th>Catalogo prestac </th>
+            <th>Centro de coste </th>
+            <th>Centro sanitario </th>
+            <th>Clase de facturacion </th>
+            <th>Cortesia </th>
+            <th>Ctd prestaciones </th>
+            <th>Denom funcion </th>
+            <th>Desc Interlocutor </th>
+            <th>Desc Prestacion </th>
+            <th>Documento modelo </th>
+            <th>Ejercicio </th>
+            <th>Estado </th>
+            <th>Estado NA30N </th>
+            <th>Fe contabilizacion </th>
+            <th>Funcion </th>
+            <th>Hora_de </th>
+            <th>Importe de Honorario Medico </th>
+            <th>Importe de Honorarios Medicos </th>
+            <th>Ind </th>
+            <th>Interlocutor </th>
+            <th>Moneda del documento </th>
+            <th>NIT acreedor </th>
+            <th>N actual prestacion </th>
+            <th>N documento </th>
+            <th>Numero de Contr </th>
+            <th>Numero de version del contrato </th>
+            <th>Observacion Cortesia </th>
+            <th>Orden destinatario </th>
+            <th>Paciente </th>
+            <th>Porcentaje Acreedor </th>
+            <th>Porcentaje Base </th>
+            <th>Porcentaje Retencion de honorario medico </th>
+            <th>Posicion </th>
+            <th>Posicion modelo </th>
+            <th>Prestacion </th>
+            <th>Prestacion1</th>
+            <th>QX Sin Costo </th>
+            <th>Sociedad </th>
+            <th>Status Transferencia FI </th>
+            <th>Tipo de prestacion </th>
+            <th>Un organiz gestora </th>
+            <th>Unidad medida_base </th>
+            <th>UO de enferm solic </th>
+            <th>UO medica solicit </th>
+            <th>Wissenschaftl Code </th>
+           </tr>
+    </thead>
+    <tbody>*@
+       @* @foreach (var item in Model){
+            
+        <tr>
+       
+         <td>
+            @Html.DisplayFor(modelItem => item.Anio)
+         </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Acreedor)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Documento_comercial)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Nombre_paciente)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.No_Documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_aseguradora)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Valor_neto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Porcentaje_de_Honorario_Medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imp_Final_Hon_Med )
+        </td>
+             <td>
+            @Convert.ToDateTime(item.Fe_inic_R).ToString("dd/MM/yyyy")
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Desc_Prestacion_Fact)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Episodio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Variación_Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad_facturada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Catal_facturacion)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Catalogo_prestac)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Centro_de_coste)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Centro_sanitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clase_de_facturacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cortesia)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Ctd_prestaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom_funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_Interlocutor)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Desc_Prestacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento_modelo)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Ejercicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Estado_NA30N)
+        </td>
+         <td>
+            @Convert.ToDateTime(item.Fe_contabilizacion).ToString("dd/MM/yyyy")
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_de)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importe_de_Honorario_Medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importe_de_Honorarios_Medicos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ind)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interlocutor)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Moneda_del_documento)
+        </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.NIT_acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_actual_prestacion)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.N_documento)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Numero_de_Contr)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Numero_de_version_del_contrato)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Observacion_Cortesia)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Orden_destinatario)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Paciente)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Porcentaje_Acreedor)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Porcentaje_Base)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Porcentaje_Retencion_de_honorario_medico)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Posicion)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Posicion_modelo)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Prestacion)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Prestacion1)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.QX_Sin_Costo)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Sociedad)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Status_Transferencia_FI)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Tipo_de_prestacion)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Un_organiz_gestora)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Unidad_medida_base)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.UO_de_enferm_solic)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.UO_medica_solicit)
+        </td>
+         <td>
+             @Html.DisplayFor(modelItem => item.Wissenschaftl_Code)
+        </td> 
+         <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id}) 
+        </td>
+                   
+       </tr>  
+              
+              
+        }*@
+    @*  
+    </tbody>
+       
+
+</table>
+</div>
+</div>
+
+ <script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $('#tabla').DataTable({
+            
+                language: {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+
+
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero-",
+                    "sLast": "Último",
+                    "sNext": "  - Siguiente",
+                    "sPrevious": "Anterior -  "
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            },
+
+            
+        });
+        
+    })
+
+ </script>*@

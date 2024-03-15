@@ -1,0 +1,60 @@
+﻿@model CargueHonorarios.Models.GrupoUsuarios
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+
+<div class="container">
+
+<h2>Crear Grupo de Empleados</h2>
+<br />
+<br />
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+ <fieldset>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+         <div class="editor-label" style="font-weight:bold">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+        <br />
+        <div class="editor-label" style="font-weight:bold">
+            @Html.LabelFor(model => model.Estado)
+        
+            @Html.EditorFor(model => model.Estado)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+
+        </div>
+    </div>
+</div>
+    <div>
+        <br />
+        <div class="col-6">
+            <input type="submit" value="Crear" class="btn btn-success"  style="color:white"/>
+             @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-success", style = "color:white" })    
+        </div>
+     </div>
+ </fieldset>
+
+}
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,456 @@
+﻿@model CargueHonorarios.Models.ISH
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ISH</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Anio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Anio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Acreedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Acreedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre_Acreedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre_Acreedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Documento_comercial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Documento_comercial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre_paciente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre_paciente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.No_Documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.No_Documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre_aseguradora)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre_aseguradora)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Valor_neto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Valor_neto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Porcentaje_de_Honorario_Medico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Porcentaje_de_Honorario_Medico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Imp_Final_Hon_Med)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Imp_Final_Hon_Med)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fe_inic_R)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fe_inic_R)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc_Prestacion_Fact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc_Prestacion_Fact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Variación_Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Variación_Precio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Aseguradora)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Aseguradora)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cantidad_facturada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cantidad_facturada)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Catal_facturacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Catal_facturacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Catalogo_prestac)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Catalogo_prestac)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Centro_de_coste)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Centro_de_coste)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Centro_sanitario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Centro_sanitario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clase_de_facturacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clase_de_facturacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cortesia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cortesia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ctd_prestaciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ctd_prestaciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Denom_funcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Denom_funcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc_Interlocutor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc_Interlocutor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc_Prestacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc_Prestacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Documento_modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Documento_modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ejercicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ejercicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Episodio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Episodio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estado_NA30N)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado_NA30N)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fe_contabilizacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fe_contabilizacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Funcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Funcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Hora_de)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hora_de)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Importe_de_Honorario_Medico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Importe_de_Honorario_Medico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Importe_de_Honorarios_Medicos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Importe_de_Honorarios_Medicos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ind)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ind)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Interlocutor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Interlocutor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Moneda_del_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Moneda_del_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NIT_acreedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NIT_acreedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.N_actual_prestacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.N_actual_prestacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.N_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.N_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Numero_de_Contr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numero_de_Contr)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Numero_de_version_del_contrato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numero_de_version_del_contrato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Observacion_Cortesia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Observacion_Cortesia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Orden_destinatario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Orden_destinatario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Paciente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Paciente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Porcentaje_Acreedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Porcentaje_Acreedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Porcentaje_Base)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Porcentaje_Base)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Porcentaje_Retencion_de_honorario_medico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Porcentaje_Retencion_de_honorario_medico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Posicion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Posicion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Posicion_modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Posicion_modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prestacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prestacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QX_Sin_Costo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QX_Sin_Costo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sociedad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sociedad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status_Transferencia_FI)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status_Transferencia_FI)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tipo_de_prestacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo_de_prestacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Un_organiz_gestora)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Un_organiz_gestora)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Unidad_medida_base)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Unidad_medida_base)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UO_de_enferm_solic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UO_de_enferm_solic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UO_medica_solicit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UO_medica_solicit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Wissenschaftl_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Wissenschaftl_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.Nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

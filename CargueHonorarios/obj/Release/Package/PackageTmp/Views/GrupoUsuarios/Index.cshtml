@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CargueHonorarios.Models.GrupoUsuarios>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+<br />
+<br />
+<br />
+<br />
+<p>
+@Html.ActionLink("Crear Nuevo Grupo", "Create",null, new { @class = "btn btn-success", style = "color:white" })
+    
+</p>
+<br />
+
+ <div class = "table-responsive">
+<table class= "table table-hover table-sm">
+    <tr class="text-white" style="background-color:#3a6a98">
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</div>

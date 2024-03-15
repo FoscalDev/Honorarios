@@ -1,0 +1,401 @@
+﻿@model IEnumerable<CargueHonorarios.Models.ISH>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acreedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Acreedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento_comercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_paciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_aseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_neto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porcentaje_de_Honorario_Medico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imp_Final_Hon_Med)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fe_inic_R)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc_Prestacion_Fact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Variación_Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_facturada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Catal_facturacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Catalogo_prestac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Centro_de_coste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Centro_sanitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clase_de_facturacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cortesia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ctd_prestaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom_funcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc_Interlocutor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc_Prestacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento_modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ejercicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Episodio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado_NA30N)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fe_contabilizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Funcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_de)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importe_de_Honorario_Medico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importe_de_Honorarios_Medicos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ind)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interlocutor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Moneda_del_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NIT_acreedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_actual_prestacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_de_Contr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_de_version_del_contrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacion_Cortesia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orden_destinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porcentaje_Acreedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porcentaje_Base)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porcentaje_Retencion_de_honorario_medico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Posicion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Posicion_modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prestacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QX_Sin_Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sociedad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status_Transferencia_FI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_de_prestacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Un_organiz_gestora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unidad_medida_base)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UO_de_enferm_solic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UO_medica_solicit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wissenschaftl_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento_comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_paciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_aseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_neto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Porcentaje_de_Honorario_Medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imp_Final_Hon_Med)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fe_inic_R)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_Prestacion_Fact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Variación_Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad_facturada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Catal_facturacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Catalogo_prestac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Centro_de_coste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Centro_sanitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clase_de_facturacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cortesia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ctd_prestaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom_funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_Interlocutor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_Prestacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento_modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ejercicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Episodio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado_NA30N)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fe_contabilizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_de)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importe_de_Honorario_Medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importe_de_Honorarios_Medicos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ind)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interlocutor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moneda_del_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIT_acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_actual_prestacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_de_Contr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_de_version_del_contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observacion_Cortesia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orden_destinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Porcentaje_Acreedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Porcentaje_Base)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Porcentaje_Retencion_de_honorario_medico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Posicion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Posicion_modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prestacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QX_Sin_Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sociedad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status_Transferencia_FI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_de_prestacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Un_organiz_gestora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unidad_medida_base)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UO_de_enferm_solic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UO_medica_solicit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wissenschaftl_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+        </td>
+        </td>
+    </tr>
+}
+
+</table>

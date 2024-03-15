@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CargueHonorarios.Models.Perfil>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+<br />
+<h3 style="text-align:center">Perfiles</h3>
+<br />
+
+<br />
+
+ <div class = "table-responsive">
+<table class= "table">
+    <tr style="background-color:#3a6a98" class="text-white"">
+        <th>
+            Grupo
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Funcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrupoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcion)
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+</div>

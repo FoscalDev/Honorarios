@@ -1,0 +1,170 @@
+﻿@using System.Web.Optimization;
+@{
+    ViewBag.Title = "_Honorarios";
+    List<string> funciones = CargueHonorarios.Models.Acceso.Validar(Session["Usuario"]);
+    string ErrorAutorizacion = string.Format("{0}", Session["ErrorAutorizacion"]);
+    if (!string.IsNullOrWhiteSpace(ErrorAutorizacion)) { Session.Remove("ErrorAutorizacion"); }
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Honorarios</title>
+    <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/Contents/image/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link rel="stylesheet" href="~/Contents/css/bootstrap.min.css">
+    <script src="~/Contents/js/jquery-3.1.1.min.js" ></script>
+    <script src="~/Contents/js/popper.min.js" ></script>
+    <script src="~/Contents/js/bootstrap.min.js" ></script>
+    <script src="~/Contents/js/chart.js" ></script>
+    @*<script src="~/Contents/js/suma.js" ></script>*@
+
+  
+
+
+    <script src = "https://code.jquery.com/jquery-3.5.1.js" defer></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"defer></script>
+    <script src ="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js" defer></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
+    <script src ="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js" defer></script>
+    <script src ="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js" defer></script>
+    @*<script src="http://cdn.datatables.net/plug-ins/1.11.2/api/sum().js"defer></script>*@   
+    
+
+    
+   @* @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body style="margin-top:50px">
+    <br />
+    @if(ErrorAutorizacion != ""){
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Falta autorización!</h4>
+            <p>@ErrorAutorizacion</p>
+            <hr>
+            <p class="mb-0">Para mayor información consulte con su administrador</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>        
+    }
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color:#3a6a98";>
+      <a class="navbar-brand"  href="~/Login/Index"  ;">Honorarios</a>
+       @*onclick="location.reload()*@
+
+        @if(funciones.Count > 0){
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+
+                 @if (funciones.Contains("GestionUsuario"))
+                 {
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Gestion Usuario
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                       
+                            <a class="dropdown-item" href="~/Usuarios/Index" style="color:#1476AA">Cargue usuarios</a>
+                        </div>
+                   </li>
+                   }
+                 @if (funciones.Contains("GrupoUsuarios"))
+                 {
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Administración Usuario
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                       
+                            <a class="dropdown-item" href="~/GrupoUsuarios/Index" style="color:#1476AA">Grupo usuarios</a>
+                            @*<a class="dropdown-item" href="~/Perfil/Index" style="color:#1476AA">Perfil de usuarios</a>*@
+                            <a class="dropdown-item" href="~/Rol/Index" style="color:#1476AA">Roles de usuarios</a>
+                        </div>
+                  </li>
+                   }
+
+                 @if (funciones.Contains("HonoraroISH") || funciones.Contains("HonorarioSD"))
+                 {
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Cargue Honorarios
+                        </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+                          <a class="dropdown-item" href="~/CargueHonorarios/CargueHonorariosSD" style="color:#1476AA">Cargue Honorarios PGP</a> 
+                          <a class="dropdown-item" href="~/CargueHonorariosISH/CargueHonorariosISH" style="color:#1476AA">Cargue Honorarios Evento</a>
+                       </div>
+                   </li>
+                   }
+
+
+                 @if (funciones.Contains("ListaHonorariosSD") || funciones.Contains("ListaHonorariosISH"))
+                 {
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           Listado Honorarios PGP (SD)
+                        </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+                          <a class="dropdown-item" href="~/CargueHonorarios/ListadoHonorarios" style="color:#1476AA">Listado Honorarios PGP</a>                                       
+                        </div>
+                   </li>
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Listado Honorarios Evento (ISH)
+                        </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                      
+                          <a class="dropdown-item" href="~/CargueHonorariosISH/ListadoHonorariosISH" style="color:#1476AA">Listado Honorarios Evento</a>
+                       </div>
+                   </li>
+                   }
+
+                 @if (funciones.Contains("InformeISH") || funciones.Contains("InformeSD"))
+                 {
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Informes Honorarios
+                        </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+                          <a class="dropdown-item" href="~/CargueHonorarios/InformeSD" style="color:#1476AA">Informe SD</a> 
+                          <a class="dropdown-item" href="~/CargueHonorariosISH/InformeISH" style="color:#1476AA">Informe ISH</a>
+                       </div>
+                   </li>
+                   }
+
+                </ul>
+               </div>
+                    
+             <ul class="navbar-nav navbar-right">
+                  <li class="nav-item">
+                     <a class="nav-link " href="~/Login/Logout">Salir</a>
+                  </li>
+             </ul>
+                       
+            
+         }    
+                   
+        </nav>   
+ 
+
+   <div class="container">@RenderBody()</div>
+
+   
+
+ @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+
+ <br />
+<br />
+ <nav class="navbar-fixed-bottom" style="border: solid 5px transparent;">    
+        
+        <p class="text-muted text-center" >Copyright © 2021 FOSCAL. Todos los derechos reservados. Fundación Oftalmológica de Santander - Clinica FOSCAL. - Floridablanca. Colombia.</p>          
+    </nav>
+</html>
