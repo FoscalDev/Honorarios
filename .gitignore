@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+*.vsidx
+/.vs/CargueHonorarios/config/applicationhost.config
+/.vs/CargueHonorarios/v17/.suo
+/.vs/CargueHonorarios/v17/DocumentLayout.json
+/.vs/Honorarios/v17/.wsuo
+/.vs/Honorarios/v17/DocumentLayout.json
+/.vs/slnx.sqlite

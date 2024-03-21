@@ -123,6 +123,7 @@ namespace CargueHonorarios.Controllers
 
 
 
+
                 int IdUsuarioR = 0;
                 string registra = String.Format("{0}", Session["Usuario"]);
                 Int32.TryParse(registra, out IdUsuarioR);
